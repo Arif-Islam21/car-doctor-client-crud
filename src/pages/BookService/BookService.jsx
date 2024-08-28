@@ -26,16 +26,13 @@ const BookService = () => {
 
     console.log(booking);
 
-    fetch(
-      "https://car-doctor-server-gfux43afj-arifs-projects-c80db1af.vercel.app/bookings",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(booking),
-      }
-    )
+    fetch("https://car-doctor-server-xi-sandy.vercel.app/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

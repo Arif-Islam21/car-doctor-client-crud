@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 const useServices = () => {
   const [services, setServices] = useState();
   useEffect(() => {
-    fetch(
-      "https://car-doctor-server-gfux43afj-arifs-projects-c80db1af.vercel.app/services"
-    )
+    fetch("https://car-doctor-server-xi-sandy.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

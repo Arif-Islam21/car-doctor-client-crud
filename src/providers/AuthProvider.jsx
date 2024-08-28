@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         axios
           .post(
-            "https://car-doctor-server-gfux43afj-arifs-projects-c80db1af.vercel.app/jwt",
+            "https://car-doctor-server-xi-sandy.vercel.app/jwt",
             loggedUser,
             {
               withCredentials: true,
@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
       } else {
         axios
           .post(
-            "https://car-doctor-server-gfux43afj-arifs-projects-c80db1af.vercel.app/logout",
+            "https://car-doctor-server-xi-sandy.vercel.app/logout",
             loggedUser,
             {
               withCredentials: true,
