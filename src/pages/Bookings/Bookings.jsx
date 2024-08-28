@@ -9,7 +9,6 @@ const Bookings = () => {
   const axiosSecure = useAxiosSecure();
 
   const url = `/bookings?email=${user?.email}`;
-  // const url = `http://localhost:5000/bookings?email=${user?.email}`;
   useEffect(() => {
     // fetch(url, { credentials: "include" })
     //   .then((res) => res.json())
@@ -20,9 +19,12 @@ const Bookings = () => {
   const handleDelete = (id) => {
     const proceed = confirm("Are You sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://car-doctor-server-gfux43afj-arifs-projects-c80db1af.vercel.app/bookings/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -36,13 +38,16 @@ const Bookings = () => {
   };
 
   const handleBookingConfirm = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: "confirm" }),
-    })
+    fetch(
+      `https://car-doctor-server-gfux43afj-arifs-projects-c80db1af.vercel.app/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ status: "confirm" }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
